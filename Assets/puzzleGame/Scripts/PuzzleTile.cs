@@ -6,8 +6,13 @@ public class PuzzleTile : MonoBehaviour {
 
     public enum PType { R,G,B,C,M,Y};
     public PType puzzleType = PType.R;
+    public bool moving;
+    public int col;
+    public float speed = 10f;
+    public PuzzleContainer container;
 
     ColorControllor colorControllor;
+    Vector3 moveTo;
     
     public void SetColor(Color c) {
         colorControllor.SetColor(c);
@@ -37,9 +42,20 @@ public class PuzzleTile : MonoBehaviour {
         }
     }
 
+    public void SetContainer(PuzzleContainer c)
+    {
+        container = c;
+    }
+
+    public void Kill() {
+        Destroy(gameObject);
+    }
+
     public void Move(Vector3 pos)
     {
-        transform.position = pos;
+        moveTo = pos;
+        if (transform.position != moveTo) moving = true;
+
     }
 
     void Awake()
@@ -56,7 +72,24 @@ public class PuzzleTile : MonoBehaviour {
 	void Update () {
 		
 	}
-    
-    
+
+    void FixedUpdate()
+    {
+        MoveUpdate();   
+    }
+
+    void MoveUpdate()
+    {
+        if (moving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, moveTo, speed * Time.fixedDeltaTime);
+            if(transform.position == moveTo)
+            {
+                container.PuzzleEndMove();
+                moving = false;
+            }
+        }
+    }
+
 
 }

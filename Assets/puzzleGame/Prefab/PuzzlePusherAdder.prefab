@@ -9,20 +9,37 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1850713871476564}
+  m_RootGameObject: {fileID: 1171800169345634}
   m_IsPrefabParent: 1
---- !u!1 &1121896196632314
+--- !u!1 &1171800169345634
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4744673245852780}
-  - component: {fileID: 33840177250630362}
-  - component: {fileID: 65411659131995076}
-  - component: {fileID: 23261188647415326}
-  - component: {fileID: 114671141035148540}
+  - component: {fileID: 4690156261015892}
+  - component: {fileID: 114312404092346868}
+  - component: {fileID: 114530926008455960}
+  m_Layer: 0
+  m_Name: PuzzlePusherAdder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1442998393843522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4746926190062002}
+  - component: {fileID: 33731294629875846}
+  - component: {fileID: 65672859900208626}
+  - component: {fileID: 23049040721077822}
+  - component: {fileID: 114954962104791730}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -30,56 +47,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1850713871476564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4169121156011708}
-  - component: {fileID: 114072243144440926}
-  - component: {fileID: 114739332447395652}
-  m_Layer: 0
-  m_Name: PuzzleTile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4169121156011708
+--- !u!4 &4690156261015892
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1850713871476564}
+  m_GameObject: {fileID: 1171800169345634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.57, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.1}
+  m_LocalScale: {x: 1.8, y: 0.8, z: 0.1}
   m_Children:
-  - {fileID: 4744673245852780}
+  - {fileID: 4746926190062002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4744673245852780
+--- !u!4 &4746926190062002
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121896196632314}
+  m_GameObject: {fileID: 1442998393843522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4169121156011708}
+  m_Father: {fileID: 4690156261015892}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23261188647415326
+--- !u!23 &23049040721077822
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121896196632314}
+  m_GameObject: {fileID: 1442998393843522}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -108,31 +108,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33840177250630362
+--- !u!33 &33731294629875846
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121896196632314}
+  m_GameObject: {fileID: 1442998393843522}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65411659131995076
+--- !u!65 &65672859900208626
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121896196632314}
+  m_GameObject: {fileID: 1442998393843522}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114072243144440926
+--- !u!114 &114312404092346868
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1850713871476564}
+  m_GameObject: {fileID: 1171800169345634}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed78d9758b4ebf04b8178fbba14fc5b1, type: 3}
@@ -140,32 +140,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0.51298195, g: 0.2794118, b: 1, a: 1}
   objectList:
-  - {fileID: 1121896196632314}
---- !u!114 &114671141035148540
+  - {fileID: 1442998393843522}
+--- !u!114 &114530926008455960
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121896196632314}
+  m_GameObject: {fileID: 1171800169345634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f63ca85d0025d94d9a22eda0365db74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  samplePusher: {fileID: 114266028267738618, guid: a53bf7243dda81a47896d3e04857c828,
+    type: 2}
+  container: {fileID: 0}
+  dir: 0
+  collider: {fileID: 0}
+  randomStack: 3
+--- !u!114 &114954962104791730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442998393843522}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc7489a246a15174d9d051601ea1b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 0, a: 0}
---- !u!114 &114739332447395652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1850713871476564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92341a54cc046ac4a91598b85800c24a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzleType: 0
-  moving: 0
-  col: 0
-  speed: 15
-  container: {fileID: 0}
