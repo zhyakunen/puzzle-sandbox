@@ -11,6 +11,7 @@ public class PuzzleContainer : MonoBehaviour,ICommonTouchListener {
     public PuzzlePusherAdder samplePusherAdder;
     public GameObject touchPlaneObject;
     public Collider touchPlane;
+    public CommonObjectText textDropCount, textInsertCount;
 
     public CommonTouchContral touchContral;
     public Phase phase;
@@ -41,7 +42,9 @@ public class PuzzleContainer : MonoBehaviour,ICommonTouchListener {
         p.SetContainer(this);
         dropPuzzleCache.Add(p);
         p.transform.position = new Vector3(col, cacheHeight[col] + height + 3f, 0f) + puzzleOffset;
-        cacheHeight[col]++; 
+        cacheHeight[col]++;
+        textDropCount.UpdateText(dropPuzzleCache.Count.ToString());
+
     }
 
     public void RemovePuzzle(int col, int row) {
@@ -89,12 +92,14 @@ public class PuzzleContainer : MonoBehaviour,ICommonTouchListener {
             yOffset -= 1f; 
             insertQuery--;
         }
+        textInsertCount.UpdateText(insertQuery.ToString());
     }
 
     public void InsertPuzzleRow() {
         insertQuery++;
+        textInsertCount.UpdateText(insertQuery.ToString());
     }
-        
+
     public PuzzleTile GetPuzzleTile(int col,int row)
     {
 
@@ -341,6 +346,10 @@ public class PuzzleContainer : MonoBehaviour,ICommonTouchListener {
 
         phase = Phase.idle;
         phaseWait = phaseDelay;
+
+        textDropCount.UpdateText(dropPuzzleCache.Count.ToString());
+        textInsertCount.UpdateText(insertQuery.ToString());
+
     }
 
     // Update is called once per frame
@@ -540,7 +549,8 @@ public class PuzzleContainer : MonoBehaviour,ICommonTouchListener {
         }
         dropPuzzleCache.Clear();
         for (int i = 0; i < width; i++)
-            cacheHeight[i] = 0; 
+            cacheHeight[i] = 0;
+        textDropCount.UpdateText(dropPuzzleCache.Count.ToString());
     }
 
     bool SwapPusher(PuzzlePusher p) {

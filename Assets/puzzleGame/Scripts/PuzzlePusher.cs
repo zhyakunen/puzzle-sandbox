@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzzlePusher : MonoBehaviour,ICommonTouchListener {
 
-    public ColorControllor colorControllor;
+    public CommonColorContral colorControllor,baseColorControllor;
     public PuzzleContainer container;
     public PuzzleContainer.Dir dir;
     public PuzzleTile.PType puzzleType;
@@ -23,6 +23,7 @@ public class PuzzlePusher : MonoBehaviour,ICommonTouchListener {
             locked = true;
             cursor.SetListener(null);
             cursor = null;
+            baseColorControllor.SetColor(Color.gray);
         }
     }
 
